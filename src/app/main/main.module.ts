@@ -10,12 +10,19 @@ import { MainPage } from './main.page';
 
 import { DisplayComponent } from "../component/display/display.component";
 
+import { DataArduService } from '../services/data-ardu.service';
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
     MainPageRoutingModule,
+    HttpClientModule
+  ],
+  providers: [
+    DataArduService
   ],
   declarations: [
     MainPage,

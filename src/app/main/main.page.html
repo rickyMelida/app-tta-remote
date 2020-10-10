@@ -18,15 +18,16 @@
     </ion-row>
 
 
-    <ion-row>
-      <app-display></app-display>
+    <ion-row (click)="recibe()">
+      Recibe los parametros
+      <!--app-display></app-display-->
     </ion-row>
 
     <ion-row class="botones">
-      <ion-col>
+      <ion-col (click)="run()">
         Arranque
       </ion-col>
-      <ion-col>
+      <ion-col (click)="getData()">
         Reset
       </ion-col>
     </ion-row>
