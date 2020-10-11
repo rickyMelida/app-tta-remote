@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Peddana&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+}
+.container {
+  width: 100%;
+  margin: 0 auto;
+
+}
+
+.display {
+  width: 200px;
+  height: 15vh;
+  background: #125;
+  border-radius: 25px;
+}
+
+.display p {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: "Peddana", serif;
+  padding: 10%;
+}
+

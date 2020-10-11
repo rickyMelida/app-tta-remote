@@ -1,49 +1,49 @@
-<ion-header>
+<ion-header class="user">
   <ion-toolbar>
-    <ion-title>main</ion-title>
+    <ion-title>Usuario: {{ user }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-grid>
-    <ion-row>Usuario:</ion-row>
+<ion-content class="container-p">
+  <ion-grid class="container">
 
-    <ion-row class="estados">
+    <ion-row class="estatus">
       <ion-col>
-        estado 1
+        <div class="circulo" id="ande"></div>
+        <div class="ande">Ande</div>
       </ion-col>
       <ion-col>
-        estado 2
+        <div class="circulo" id="generador"></div>
+        <div class="generador">Generador</div>
       </ion-col>
     </ion-row>
 
 
-    <ion-row (click)="recibe()">
-      Recibe los parametros
-      <!--app-display></app-display-->
+    <ion-row class="display">
+      <!-- <app-display></app-display> -->
+      <div id="display" (click)="recibe()">
+        <p>
+          0.0 A
+        </p>
+      </div>
     </ion-row>
 
-    <ion-row class="botones">
+    <ion-row class="buttons">
       <ion-col (click)="run()">
-        Arranque
+        <div class="on">
+          <ion-button color="light">Success</ion-button>
+        </div>
       </ion-col>
       <ion-col (click)="getData()">
-        Reset
+        <ion-item>
+          <!-- <ion-label>Reset</ion-label> -->
+          <ion-select value="dog">
+            <ion-select-option value="cat">Combustible</ion-select-option>
+            <ion-select-option value="dog">Stop</ion-select-option>
+          </ion-select>
+        </ion-item>
       </ion-col>
     </ion-row>
 
   </ion-grid>
 </ion-content>
-
-
-<!--ion-item>
-  <ion-label>Gaming</ion-label>
-  <ion-select interface="popover">
-    <ion-select-option value="nes">NES</ion-select-option>
-    <ion-select-option value="n64">Nintendo64</ion-select-option>
-    <ion-select-option value="ps">PlayStation</ion-select-option>
-    <ion-select-option value="genesis">Sega Genesis</ion-select-option>
-    <ion-select-option value="saturn">Sega Saturn</ion-select-option>
-    <ion-select-option value="snes">SNES</ion-select-option>
-  </ion-select>
-</ion-item-->

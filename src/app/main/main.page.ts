@@ -9,9 +9,12 @@ import { DataArduService } from "../services/data-ardu.service";
 })
 export class MainPage implements OnInit {
   datos: any;
+  user: string;
+
   constructor( private _dataArdu: DataArduService ) { }
 
   ngOnInit() {
+    this.user = 'Admin';
   }
 
   getData() {

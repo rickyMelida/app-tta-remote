@@ -6,9 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./display.component.scss'],
 })
 export class DisplayComponent implements OnInit {
-
+  datos: number;
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.datos = 0.0;
+  }
 
 }

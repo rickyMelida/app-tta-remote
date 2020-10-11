@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Peddana&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  height: auto;
+}
+
+ion-row {
+  color: white;
+  height: 29vh;
+}
+
+.user {
+  padding: 10px;
+}
+
+.user ion-toolbar ion-title {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: "Peddana", serif;
+}
+
+.estatus {
+  //background: green;
+}
+
+.estatus ion-col {
+  margin: auto;
+  padding-left: 35px;
+  padding-top: 40px;
+}
+
+ion-icon {
+  font-size: 100px;
+  background: black;
+}
+
+.display {
+  //background: yellow;
+}
+
+#display {
+  width: 250px;
+  height: 100px;
+  border-radius: 25px;
+  border: 3px solid #555;
+  background: #428bca;
+  margin: auto;
+}
+
+#display p {
+  text-align: center;
+  font-size: 35px;
+  font-family: "Peddana", serif;
+  padding-top: 4vh;
+}
+
+.buttons {
+  //background: black;
+}
+
+.circulo {
+  width: 100px;
+  height: 100px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  border: 3px solid #555;
+}
+.ande,
+.generador {
+  color: rgb(48, 47, 47);
+}
+
+#ande {
+  background: #5cb85c;
+}
+
+#generador {
+  background: red;
+}
