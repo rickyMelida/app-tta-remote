@@ -28,20 +28,21 @@
       </div>
     </ion-row>
 
-    <ion-row class="buttons">
-      <ion-col (click)="run()">
-        <div class="on">
-          <ion-button color="light">Success</ion-button>
+    <ion-row class="buttons" >
+      <ion-col (click)="run()" size="3" >
+        <div>
+          <ion-button color="light" >Start</ion-button>
         </div>
       </ion-col>
-      <ion-col (click)="getData()">
-        <ion-item>
-          <!-- <ion-label>Reset</ion-label> -->
-          <ion-select value="dog">
-            <ion-select-option value="cat">Combustible</ion-select-option>
-            <ion-select-option value="dog">Stop</ion-select-option>
-          </ion-select>
-        </ion-item>
+      <ion-col size="6" class="ion-text-center">
+        <div>
+          <ion-button color="light">A. Manual</ion-button>
+        </div>
+      </ion-col>
+      <ion-col size="3" class="ion-text-end">
+        <div>
+          <ion-button color="light" >Reset</ion-button>
+        </div>
       </ion-col>
     </ion-row>
 
