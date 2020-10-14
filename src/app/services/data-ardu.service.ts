@@ -18,14 +18,15 @@ export class DataArduService {
   }
 
   recibirCorriente(): Observable<any> {
-    return this._http.get(this.url + '?envia');
+    
+    return this._http.get(this.url + '?enviaDato');
   }
   stop():Observable<any> {
     return this._http.get(this.url + '?OFFa');
   }
 
-  run():Observable<any> {
-    return this._http.get(this.url + '?ONa');
+  start():Observable<any> {
+    return this._http.get(this.url + '?start');
   }
 
   recibirParametro(): Observable<any> {

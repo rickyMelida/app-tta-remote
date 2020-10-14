@@ -23,20 +23,20 @@
       <!-- <app-display></app-display> -->
       <div id="display" (click)="recibe()">
         <p>
-          0.0 A
+          {{ datos }} A
         </p>
       </div>
     </ion-row>
 
     <ion-row class="buttons" >
-      <ion-col (click)="run()" size="3" >
+      <ion-col (click)="start()" size="3" >
         <div>
           <ion-button color="light" >Start</ion-button>
         </div>
       </ion-col>
       <ion-col size="6" class="ion-text-center">
         <div>
-          <ion-button color="light">A. Manual</ion-button>
+          <ion-button color="light" (click)="getCorriente()">A. Manual</ion-button>
         </div>
       </ion-col>
       <ion-col size="3" class="ion-text-end">

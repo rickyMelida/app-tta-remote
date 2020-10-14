@@ -15,21 +15,13 @@ export class MainPage implements OnInit {
 
   ngOnInit() {
     this.user = 'Admin';
+    this.datos = 0.0;
+    this.getCorriente();
   }
 
-  getData() {
-   this._dataArdu.stop().subscribe(
-      res => {
-        console.log(res);
-      },
-      err => {
-        console.log(`Hubo un err`);
-      }
-    );
-  }
-
-  run() {
-    this._dataArdu.run().subscribe(
+ 
+  start() {
+    this._dataArdu.start().subscribe(
       res => {
         console.log('Seee!');
       },
@@ -39,16 +31,19 @@ export class MainPage implements OnInit {
     )
   }
 
-  recibe() {
-    this._dataArdu.recibirCorriente().subscribe(
-      res => {
-        console.log(res.dato);
-      },
-      err => {
-        console.log('NO Recibio');
-      }
-    )
-    // console.log('Recibe')
+  getCorriente() {
+    setInterval(() => {
+      this._dataArdu.recibirCorriente().subscribe(
+        res => {
+          // console.log(`Recibe: ${res}`);
+          this.datos = res;
+        },
+        err => {
+          console.log('NO Recibio');
+        }
+      );
+    }, 1000);
+
   }
 
 }
