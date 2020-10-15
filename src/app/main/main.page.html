@@ -21,7 +21,7 @@
 
     <ion-row class="display">
       <!-- <app-display></app-display> -->
-      <div id="display" (click)="recibe()">
+      <div id="display" >
         <p>
           {{ datos }} A
         </p>
@@ -31,17 +31,23 @@
     <ion-row class="buttons" >
       <ion-col (click)="start()" size="3" >
         <div>
-          <ion-button color="light" >Start</ion-button>
+          <!--ion-button color="light" >Start</ion-button-->
+          <app-toggle-button></app-toggle-button>
+          <ion-title color="primary">Start</ion-title>
         </div>
       </ion-col>
       <ion-col size="6" class="ion-text-center">
         <div>
-          <ion-button color="light" (click)="getCorriente()">A. Manual</ion-button>
+          <!-- <ion-button color="light" (click)="getCorriente()">A. Manual</ion-button> -->
+          <app-toggle-button></app-toggle-button>
+          <ion-title color="primary">A. Manual</ion-title>
         </div>
       </ion-col>
       <ion-col size="3" class="ion-text-end">
         <div>
-          <ion-button color="light" >Reset</ion-button>
+          <!-- <ion-button color="light" >Reset</ion-button> -->
+          <app-toggle-button></app-toggle-button>
+          <ion-title color="primary">Reset</ion-title>
         </div>
       </ion-col>
     </ion-row>

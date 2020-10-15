@@ -9,6 +9,7 @@ import { MainPageRoutingModule } from './main-routing.module';
 import { MainPage } from './main.page';
 
 import { DisplayComponent } from "../component/display/display.component";
+import { ToggleButtonComponent } from "../component/toggle-button/toggle-button.component";
 
 import { DataArduService } from '../services/data-ardu.service';
 import { HttpClientModule } from '@angular/common/http';
@@ -26,7 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   declarations: [
     MainPage,
-    DisplayComponent
+    DisplayComponent,
+    ToggleButtonComponent
   ]
 })
 export class MainPageModule {}
