@@ -18,7 +18,6 @@ export class DataArduService {
   }
 
   recibirCorriente(): Observable<any> {
-    
     return this._http.get(this.url + '?enviaDato');
   }
   stop():Observable<any> {
@@ -27,6 +26,17 @@ export class DataArduService {
 
   start():Observable<any> {
     return this._http.get(this.url + '?start');
+  }
+
+  status():Observable<any> {
+    return this._http.get(this.url + '?status');
+  }
+  manualoff():Observable<any> {
+    return this._http.get(this.url + '?manualoff');
+  }
+
+  manualon():Observable<any> {
+    return this._http.get(this.url + '?manualon');
   }
 
   recibirParametro(): Observable<any> {

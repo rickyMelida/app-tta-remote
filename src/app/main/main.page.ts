@@ -8,18 +8,26 @@ import { DataArduService } from "../services/data-ardu.service";
   providers: [DataArduService]
 })
 export class MainPage implements OnInit {
-  datos: any;
   user: string;
+  status_ande: boolean;
+  status_generador: boolean;
+  estado: string;
 
-  constructor( private _dataArdu: DataArduService ) { }
+  data: any = {
+    name: "button",
+    status: "estado_boton"
+  };
+
+  constructor(private _dataArdu: DataArduService) { }
 
   ngOnInit() {
     this.user = 'Admin';
-    this.datos = 0.0;
-    this.getCorriente();
+    this.status_ande = false;
+    this.status_generador = true;
+    const boton: any = document.getElementById('boton');
+    boton.oncontextmenu = this.disable();
   }
 
- 
   start() {
     this._dataArdu.start().subscribe(
       res => {
@@ -31,19 +39,16 @@ export class MainPage implements OnInit {
     )
   }
 
-  getCorriente() {
-    setInterval(() => {
-      this._dataArdu.recibirCorriente().subscribe(
-        res => {
-          // console.log(`Recibe: ${res}`);
-          this.datos = res;
-        },
-        err => {
-          console.log('NO Recibio');
-        }
-      );
-    }, 1000);
-
+  disable() {
+    return false;
   }
 
+  manual_on(event) {
+    this.estado = "Prende";
+    console.log(event.type);
+  }
+  manual_off(event) {
+    this.estado = "Apaga";
+    console.log(event.type);
+  }
 }

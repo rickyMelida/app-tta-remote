@@ -11,6 +11,9 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { DataArduService } from './services/data-ardu.service';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from "@angular/forms";
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+     //=> Basic usage (forRoot can also take options, see details below)
+    SweetAlert2Module.forRoot()
   ],
   providers: [
     StatusBar,

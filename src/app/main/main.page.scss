@@ -59,9 +59,6 @@ ion-icon {
   padding-top: 4vh;
 }
 
-.buttons {
-  //background: black;
-}
 
 .circulo {
   width: 100px;
@@ -71,15 +68,51 @@ ion-icon {
   border-radius: 50%;
   border: 3px solid #555;
 }
+
 .ande,
 .generador {
   color: rgb(48, 47, 47);
 }
 
-#ande {
-  background: #5cb85c;
+
+.generador-on {
+  color: red;
+  animation: latir infinite 2s linear;
 }
 
-#generador {
-  background: red;
+.generador-off {
+  color: gray;
+}
+
+.button-title {
+  color: #555;
+}
+
+[name="btn-start"] {
+  margin-left: 20px;
+}
+
+[name="btn-reset"] {
+  margin-right: 20px;
+}
+
+
+@keyframes latir {
+  /*from seria desde que empieza la animacion*/
+  0% {
+      /**/
+      transform: scale(1, 1);
+  }
+
+  50% {
+      transform: scale(1.02, 1.02);
+  }
+
+  55% {
+      transform: scale(0.95, 0.95);
+  }   
+  /*hasta que acaba*/
+  100% {
+      transform: scale(1, 1);
+  }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-toggle-button',
@@ -6,9 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./toggle-button.component.scss'],
 })
 export class ToggleButtonComponent implements OnInit {
+  @Input() option: string;
 
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
+
+  options() {
+    console.log(this.option);
+    if(this.option === 'start') {
+    }
+  }
 
 }

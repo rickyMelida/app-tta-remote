@@ -54,6 +54,9 @@
               },
               {
                 "input": "./node_modules/bootstrap/dist/js/bootstrap.min.js"
+              },
+              {
+                "input": "./node_modules/sweetalert2/dist/sweetalert2.js"
               }
             ]
           },

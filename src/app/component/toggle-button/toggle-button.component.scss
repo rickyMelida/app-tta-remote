@@ -5,18 +5,18 @@
     justify-content: center;
     align-items: center;
     min-height: auto;
-    // background: #0c0c0c;
 }
 
 label {
     position: relative;
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     cursor: pointer;
     border-radius: 50%;
 }
 
-label .btn {
+
+label .btn-active {
     position: absolute;
     top: 0;
     left: 0;
@@ -33,18 +33,14 @@ label .btn {
                 0 0 0 5.5px #080808;
 }
 
-label input[type="submit"]:hover ~ .btn {
+/* Cambiamos el color de fondo del icono */
+label:active {
     box-shadow: 0 0 0 rgba(0, 0, 0, 1),
                 inset 0 -2px 5px rgba(0, 0, 0, 1),
                 inset 0 1px 1px rgba(255, 255, 255, 0.1),
                 0 0 0 2px #000,
                 0 0 0 5px #0c0c0c,
                 0 0 0 5.5px #00a1ff;
-}
-
-label input[type="submit"] {
-    -webkit-appearance: none;
-    display: none;
 }
 
 label .fa {
@@ -56,9 +52,64 @@ label .fa {
     color: #0c0c0c;
 }
 
-label input[type="submit"]:hover ~ .fa {
+label a:active ~ .icon-active {
     color: #00ffe7;
     text-shadow: 0 0 15px #00a1ff,
-                 0 0 30px #00a1ff;
+                0 0 30px #00a1ff;
+}
 
+label i:active{
+  color: #00ffe7;
+  text-shadow: 0 0 15px #00a1ff,
+              0 0 30px #00a1ff;
+}
+
+
+/*---------------Con esto desactivamos los botones---------*/
+label .btn-disable {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #1b1b1b;
+    border-radius: 50%;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 1),
+                inset 0 -2px 5px rgba(0, 0, 0, 1),
+                inset 0 2px 2px rgba(255, 255, 255, 0.5),
+                0 0 0 2px #000,
+                0 0 0 5px #0c0c0c,
+                0 0 0 5.5px #080808;
+}
+
+/* Cambiamos el color de fondo del icono */
+label:active {
+    box-shadow: 0 0 0 rgba(0, 0, 0, 1),
+                inset 0 -2px 5px rgba(0, 0, 0, 1),
+                inset 0 1px 1px rgba(255, 255, 255, 0.1),
+                0 0 0 2px #000,
+                0 0 0 5px #0c0c0c,
+                0 0 0 5.5px #00a1ff;
+}
+
+label .icon-disable {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.5em;
+    color: #333;
+}
+
+label .btn-disable:active ~ .icon-disable {
+    color: #333;
+    text-shadow: 0 0 15px rgba(0, 0, 0, 1),
+                0 0 30px rgba(0, 0, 0, 1);
+}
+
+label .icon-disable:active{
+  color: #333;
+  text-shadow: 0 0 15px rgba(0, 0, 0, 1),
+              0 0 30px rgba(0, 0, 0, 1);
 }

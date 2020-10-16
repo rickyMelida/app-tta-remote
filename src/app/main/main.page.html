@@ -1,5 +1,8 @@
 <ion-header class="user">
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
     <ion-title>Usuario: {{ user }}</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,48 +12,60 @@
 
     <ion-row class="estatus">
       <ion-col>
-        <div class="circulo" id="ande"></div>
+        <div class="ande-on" *ngIf="status_ande && !status_generador;else ande_off">
+          <img src="assets/images/electricidad-on.png" width="70">
+        </div>
+
+        <ng-template #ande_off>
+          <div class="ande-off">
+            <img src="assets/images/electricidad-off.png" width="70">
+          </div>
+        </ng-template>
+
         <div class="ande">Ande</div>
       </ion-col>
+
       <ion-col>
-        <div class="circulo" id="generador"></div>
+        <div class="generador-on" *ngIf="!status_ande && status_generador;else generador_off">
+          <img src="assets/images/generador-on.png" width="70">
+        </div>>
+
+        <ng-template #generador_off>
+          <div class="generador-off">
+            <img src="assets/images/generador-off.png" width="70">
+          </div>
+        </ng-template>
         <div class="generador">Generador</div>
       </ion-col>
     </ion-row>
 
 
     <ion-row class="display">
-      <!-- <app-display></app-display> -->
-      <div id="display" >
-        <p>
-          {{ datos }} A
-        </p>
-      </div>
+      <app-display></app-display>
     </ion-row>
 
-    <ion-row class="buttons" >
-      <ion-col (click)="start()" size="3" >
+    <ion-row class="buttons">
+      <ion-col size="3">
         <div>
-          <!--ion-button color="light" >Start</ion-button-->
-          <app-toggle-button></app-toggle-button>
-          <ion-title color="primary">Start</ion-title>
+          <app-toggle-button [option]="'start'">
+          </app-toggle-button>
+          <ion-title class="button-title" name="btn-start">Start</ion-title>
         </div>
       </ion-col>
+
       <ion-col size="6" class="ion-text-center">
         <div>
-          <!-- <ion-button color="light" (click)="getCorriente()">A. Manual</ion-button> -->
-          <app-toggle-button></app-toggle-button>
-          <ion-title color="primary">A. Manual</ion-title>
+          <app-toggle-button id="boton" [option]="data" (mousedown)="manual_on($event)" (mouseup)="manual_off($event)"></app-toggle-button>
+          <ion-title class="button-title" name="btn-manual">A. Manual({{ estado }})</ion-title>
         </div>
       </ion-col>
+
       <ion-col size="3" class="ion-text-end">
         <div>
-          <!-- <ion-button color="light" >Reset</ion-button> -->
-          <app-toggle-button></app-toggle-button>
-          <ion-title color="primary">Reset</ion-title>
+          <app-toggle-button [option]="'reset'"></app-toggle-button>
+          <ion-title class="button-title" name="btn-reset">Reset</ion-title>
         </div>
       </ion-col>
     </ion-row>
-
   </ion-grid>
 </ion-content>

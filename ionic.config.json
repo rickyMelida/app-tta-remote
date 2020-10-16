@@ -1,5 +1,7 @@
 {
   "name": "app-tta-remote",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
