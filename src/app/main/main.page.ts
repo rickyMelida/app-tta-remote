@@ -19,7 +19,7 @@ export class MainPage implements OnInit {
   };
 
   constructor(private _dataArdu: DataArduService) { }
-
+  
   ngOnInit() {
     this.user = 'Admin';
     this.status_ande = false;
