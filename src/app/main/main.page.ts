@@ -26,9 +26,9 @@ export class MainPage implements OnInit {
     this.user = 'Admin';
     this.status_ande = false;
     this.status_generador = true;
-    const boton: any = document.getElementById('boton');
-    boton.oncontextmenu = this.disable();
-    this.estadoAnde();
+    // const boton: any = document.getElementById('boton');
+    // boton.oncontextmenu = this.disable();
+    // this.estadoAnde();
   }
 
   start() {

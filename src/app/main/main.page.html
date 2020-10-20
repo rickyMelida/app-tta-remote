@@ -7,8 +7,8 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="container-p">
-  <ion-grid class="container">
+<ion-content>
+  <ion-grid>
 
     <ion-row class="estatus">
       <ion-col>
@@ -45,26 +45,35 @@
     </ion-row>
 
     <ion-row class="buttons">
-      <ion-col size="3" (click)="start()">
+      <ion-col size="6" (click)="start()">
         <div>
+          <ion-title class="button-title" name="btn-start">Start</ion-title>
           <app-toggle-button [option]="'start'">
           </app-toggle-button>
-          <ion-title class="button-title" name="btn-start">Start</ion-title>
         </div>
       </ion-col>
 
-      <ion-col size="6" class="ion-text-center">
-        <div>
-          <app-toggle-button id="boton" [option]="data" (mousedown)="manual_on($event)" (mouseup)="manual_off($event)"></app-toggle-button>
-          <ion-title class="button-title" name="btn-manual">A. Manual({{ estado }})</ion-title>
-        </div>
-      </ion-col>
 
-      <ion-col size="3" class="ion-text-end" (click)="estadoAnde()">
+      <ion-col size="6" class="ion-text-end" (click)="estadoAnde()">
         <div>
-          <app-toggle-button [option]="'reset'"></app-toggle-button>
           <ion-title class="button-title" name="btn-reset">Reset</ion-title>
+          <app-toggle-button [option]="'reset'"></app-toggle-button>
         </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="select ion-align-items-center">
+      <!-- class="ion-align-self-center" -->
+      <ion-col size="6" size-lg offset="3">
+        <ion-item>
+          <ion-label>Duración</ion-label>
+          <ion-select value="3000">
+            <ion-select-option value="1000">1 Seg</ion-select-option>
+            <ion-select-option value="3000">3 Seg</ion-select-option>
+            <ion-select-option value="5000">5 Seg</ion-select-option>
+            <ion-select-option value="10000">10 Seg</ion-select-option>
+          </ion-select>
+        </ion-item>
       </ion-col>
     </ion-row>
   </ion-grid>
