@@ -10,6 +10,7 @@ import Swal from 'sweetalert2';
   providers: [DataArduService]
 })
 export class MainPage implements OnInit {
+  seleccionado: number = 3000;
   user: string;
   status_ande: boolean;
   status_generador: boolean;
@@ -26,15 +27,14 @@ export class MainPage implements OnInit {
     this.user = 'Admin';
     this.status_ande = false;
     this.status_generador = true;
-    // const boton: any = document.getElementById('boton');
-    // boton.oncontextmenu = this.disable();
-    // this.estadoAnde();
+    this.estadoAnde();
+    this.estadoGenerador();
   }
 
   start() {
-    if (!this.status_ande) {
+    if (!this.status_ande && !this.status_generador) {
 
-      this._dataArdu.start().subscribe(
+      this._dataArdu.start(this.seleccionado).subscribe(
         res => {
           console.log('Seee!');
           console.log(res);
@@ -43,50 +43,54 @@ export class MainPage implements OnInit {
           console.log('Error!!');
         }
       );
-    }else {
-      Swal.fire(
-        'Ups!',
-        'No puedes arrancar generador por que hay tension de Ande!',
-        'warning'
-      );
+    } else {
+      if(this.status_ande) {
+        Swal.fire(
+          'Ups!',
+          'No puedes arrancar generador por que hay tension de Ande!',
+          'warning'
+        );
+      }
+      if(this.status_generador) {
+        Swal.fire(
+          'Alerta!',
+          'El generador ya esta en marcha!',
+          'warning'
+        );
+      }
     }
   }
 
-  disable() {
-    return false;
-  }
-
-  manual_on(event) {
-    this.estado = "Prende";
-    console.log(event.type);
-  }
-
-  manual_off(event) {
-    this.estado = "Apaga";
-    console.log(event.type);
-  }
 
   estadoAnde() {
     setInterval(() => {
-
-      this._dataArdu.status().subscribe(
+      this._dataArdu.statusAnde().subscribe(
         res => {
-          if(res === 1) {
-            this.status_ande = res;
-            this.status_generador = !res;
-            console.log("Estas con Ande");
-          }else {
-            this.status_ande = res;
-            this.status_generador = !res;
-            console.log("NO estas con Ande");
-
-          }
+          this.status_ande = res;
         },
 
         err => {
-          console.log("Hay un error al recibir la señal de Ande");
+          console.log('Hay un error al recibir la señal de Ande');
         }
-      )
+      );
     }, 1000);
+  }
+
+  estadoGenerador() {
+    setInterval(() => {
+      this._dataArdu.statusGenerador().subscribe(
+        res => {
+          // console.log(`La señal del generador es ${res}`);
+          this.status_generador = res;
+        },
+        err => {
+          console.log(`Hubo un error al recibir la señal del generador`);
+        }
+      );
+    }, 1000);
+  }
+
+  estados() {
+    console.log(`El generador esta en ${this.status_generador} y ande esta en ${this.status_ande}`);
   }
 }

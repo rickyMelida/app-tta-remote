@@ -73,11 +73,16 @@ ion-icon {
 .ande,
 .generador {
   color: rgb(48, 47, 47);
+  font-weight: bold;
 }
 
 .ande {
   margin-top: 15px;
   margin-left: 25px;
+}
+
+.generador {
+  margin-top: 30px;
 }
 
 .generador-on {
@@ -94,11 +99,11 @@ ion-icon {
 }
 
 [name="btn-start"] {
-  margin-left: 20px;
+  margin-left: 65px;
 }
 
 [name="btn-reset"] {
-  margin-right: 20px;
+  margin: 0px 60px;
 }
 
 

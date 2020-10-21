@@ -28,7 +28,7 @@
       <ion-col>
         <div class="generador-on" *ngIf="!status_ande && status_generador;else generador_off">
           <img src="assets/images/generador-on.png" width="70">
-        </div>>
+        </div>
 
         <ng-template #generador_off>
           <div class="generador-off">
@@ -47,17 +47,16 @@
     <ion-row class="buttons">
       <ion-col size="6" (click)="start()">
         <div>
+          <app-toggle-button [option]="'start'"></app-toggle-button>
           <ion-title class="button-title" name="btn-start">Start</ion-title>
-          <app-toggle-button [option]="'start'">
-          </app-toggle-button>
         </div>
       </ion-col>
 
 
-      <ion-col size="6" class="ion-text-end" (click)="estadoAnde()">
+      <ion-col size="6" class="ion-text-end" (click)="estados()">
         <div>
-          <ion-title class="button-title" name="btn-reset">Reset</ion-title>
           <app-toggle-button [option]="'reset'"></app-toggle-button>
+          <ion-title class="button-title" name="btn-reset">Reset</ion-title>
         </div>
       </ion-col>
     </ion-row>
@@ -67,11 +66,11 @@
       <ion-col size="6" size-lg offset="3">
         <ion-item>
           <ion-label>Duración</ion-label>
-          <ion-select value="3000">
-            <ion-select-option value="1000">1 Seg</ion-select-option>
+          <ion-select value="3000" [(ngModel)]="seleccionado">
+            <ion-select-option value="2000">2 Seg</ion-select-option>
             <ion-select-option value="3000">3 Seg</ion-select-option>
             <ion-select-option value="5000">5 Seg</ion-select-option>
-            <ion-select-option value="10000">10 Seg</ion-select-option>
+            <ion-select-option value="8000">8 Seg</ion-select-option>
           </ion-select>
         </ion-item>
       </ion-col>
