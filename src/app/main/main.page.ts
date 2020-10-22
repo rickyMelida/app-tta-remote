@@ -27,8 +27,8 @@ export class MainPage implements OnInit {
     this.user = 'Admin';
     this.status_ande = false;
     this.status_generador = true;
-    this.estadoAnde();
-    this.estadoGenerador();
+    // this.estadoAnde();
+    // this.estadoGenerador();
   }
 
   start() {
