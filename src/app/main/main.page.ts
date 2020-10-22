@@ -26,7 +26,7 @@ export class MainPage implements OnInit {
   ngOnInit() {
     this.user = 'Admin';
     this.status_ande = false;
-    this.status_generador = true;
+    this.status_generador = false;
     // this.estadoAnde();
     // this.estadoGenerador();
   }
