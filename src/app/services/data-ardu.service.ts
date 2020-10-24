@@ -44,5 +44,8 @@ export class DataArduService {
     return this._http.get(this.urlPrueba + 'recibe');
   }
 
+  reset():Observable<any> {
+    return this._http.get(this.url + '?reset');
+  }
 
 }

@@ -27,13 +27,13 @@ export class MainPage implements OnInit {
     this.user = 'Admin';
     this.status_ande = false;
     this.status_generador = false;
-    // this.estadoAnde();
-    // this.estadoGenerador();
+    this.estadoAnde();
+    this.estadoGenerador();
   }
 
   start() {
     if (!this.status_ande && !this.status_generador) {
-
+      console.log(`Realizaste un arranque con una duracion de ${this.seleccionado} segundos`);
       this._dataArdu.start(this.seleccionado).subscribe(
         res => {
           console.log('Seee!');
@@ -44,14 +44,14 @@ export class MainPage implements OnInit {
         }
       );
     } else {
-      if(this.status_ande) {
+      if (this.status_ande) {
         Swal.fire(
           'Ups!',
           'No puedes arrancar generador por que hay tension de Ande!',
           'warning'
         );
       }
-      if(this.status_generador) {
+      if (this.status_generador) {
         Swal.fire(
           'Alerta!',
           'El generador ya esta en marcha!',
@@ -92,5 +92,16 @@ export class MainPage implements OnInit {
 
   estados() {
     console.log(`El generador esta en ${this.status_generador} y ande esta en ${this.status_ande}`);
+  }
+
+  reset() {
+    this._dataArdu.reset().subscribe(
+      res => {
+        console.log('Se resetea');
+      },
+      err => {
+        console.log('No se pudo resetear');
+      }
+    )
   }
 }
